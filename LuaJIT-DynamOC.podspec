@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
 	s.homepage			= "https://github.com/onesmash/LuaJIT-DYOC"
 	s.license      		= { :type => "MIT", :file => "COPYRIGHT" }
 	s.author			= { "xuhui" => "good122000@qq.com" }
-	s.source			= { :http => "https://raw.githubusercontent.com/onesmash/LuaJIT-DYOC/master/LuaJIT-2.1.0-beta3.zip" }
+	s.source			= { :http => "https://raw.githubusercontent.com/onesmash/LuaJIT-DYOC/master/LuaJIT-2.1.0-beta3.tar.gz" }
 	s.source_files		= "include/*.h"
 	s.ios.deployment_target		= "8.0"
 	s.ios.public_header_files	= "include/*.h"
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
     	cp file.tgz ${CURRENT_PATH}/file.tgz
     	cd ${CURRENT_PATH}
-    	unzip file.tgz
+    	tar -xzf file.tgz
     	cd LuaJIT-2.1.0-beta3
 
     	echo "base path ${BASE_PATH}"
