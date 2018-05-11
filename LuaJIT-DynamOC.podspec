@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name				= "LuaJIT-DynamOC"
-	s.version			= "1.0.0"
+	s.version			= "1.0.1"
 	s.summary			= "LuaJIT for DynamOC"
 	s.homepage			= "https://github.com/onesmash/LuaJIT-DYOC"
 	s.license      		= { :type => "MIT", :file => "COPYRIGHT" }
@@ -12,6 +12,11 @@ Pod::Spec.new do |s|
 	s.ios.vendored_libraries	= "lib/libluajit.a"
 	s.libraries = 'c++'
 	s.requires_arc				= false
+	s.xcconfig = {
+		"LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/#{s.name}/lib",
+        "OTHER_LDFLAGS" => ['-lluajit']
+    }
+
 	s.prepare_command = <<-CMD
 		ICC=$(xcrun --find clang)
 		SDK_VERSION=$(xcrun --sdk iphoneos --show-sdk-version 2> /dev/null)
