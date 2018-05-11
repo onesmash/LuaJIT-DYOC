@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 	s.requires_arc				= false
 	s.xcconfig = {
 		"LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/#{s.name}/lib",
-        "OTHER_LDFLAGS" => ['-lluajit']
+        "OTHER_LDFLAGS" => ['-lluajit', '-lc++']
     }
 
 	s.prepare_command = <<-CMD
