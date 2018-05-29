@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name				= "LuaJIT-DynamOC"
-	s.version			= "1.0.1"
+	s.version			= "1.0.2"
 	s.summary			= "LuaJIT for DynamOC"
 	s.homepage			= "https://github.com/onesmash/LuaJIT-DYOC"
 	s.license      		= { :type => "MIT", :file => "COPYRIGHT" }
@@ -29,10 +29,8 @@ Pod::Spec.new do |s|
 		
 		mkdir -p ${CURRENT_PATH}/include
 
-    	cp file.tgz ${CURRENT_PATH}/file.tgz
+    	cp -vRL * ${CURRENT_PATH}
     	cd ${CURRENT_PATH}
-    	tar -xzf file.tgz
-    	cd LuaJIT-2.1.0-beta3
 
     	echo "base path ${BASE_PATH}"
 
@@ -101,8 +99,6 @@ Pod::Spec.new do |s|
 		cp -vRL "${CURRENT_PATH}/include/" "${BASE_PATH}/include/"
 
 		cd "${BASE_PATH}"
-
-		echo "base path ${BASE_PATH}"
 
 		echo "Cleaning up..."
     	rm -rf "${CURRENT_PATH}"
